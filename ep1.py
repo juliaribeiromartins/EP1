@@ -122,7 +122,6 @@ def carregar_cenarios():
       },
         }
     nome_cenario_atual = "inicio"
-    return cenarios, nome_cenario_atual
 
 
 
