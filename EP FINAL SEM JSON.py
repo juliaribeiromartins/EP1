@@ -1,24 +1,174 @@
-import json
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 18 18:18:48 2019
+
+@author: julia
+"""
+
 import random
 def carregar_cenarios():
-    with open('cenarios.json','r')as arquivo:
-        texto=arquivo.read()
-    cenarios=json.loads(texto)
-
+    cenarios = {
+        "inicio": {
+            "titulo": "fumódromo",
+            "descricao": "Você acabou de descer do Uber, o que fazer agora?",
+            "opcoes": {
+                "predio 2": " Tentar achar o professor no prédio novo",
+                "entrada p1": " Adentrar o saguão de entrada"
+            }
+        },
+        "predio 2": {
+            "titulo": "Entrada prédio novo ",
+            "descricao": "Ops... o prédio está fechado!",
+            "opcoes": {
+                "entrada p1": "Adentrar o saguão de entrada do prédio 1"
+            }
+        },
+        "entrada p1": {
+            "titulo": "Saguão de entrada do Inpser",
+            "descricao": "Você como brilhante e preguiçoso aluno que é resolve ir na sala dos professores em busca de Raul.",
+            "opcoes": {
+                "elevador":"vale a pena gastar seus minutos preciosos?",
+                "escadas":"pode ser mais rápido, mas perigoso, tem certeza?"
+            }
+        },
+        "escadas": {
+            "titulo": "escadaria do terror",
+            "descricao": "Você acaba de fazer uma escolha errada, encontrou um veterano em semana de prova",
+            "opcoes": {
+                "lutar":"combate com um veterano nervoso",
+                
+            }
+        },
+            "lutar": {
+            "titulo": "Você conseguiu!",
+            "descricao": "Agora que você conseguiu vencer a batalha, continue a busca pelo Raul",
+            "opcoes": {
+                "sala dos professores":"Ir até a sala dos professores",
+                
+            }
+        },
+            
+        "elevador": {
+            "titulo": "cápsula da velocidade",
+            "descricao": "Você acabou de entrar no elevador, e encontrou o doce preferido do Raul, que agora esta no seu inventário porque pode ser útil no futuro!",
+            "opcoes": {
+                "sala dos professores": " Ir até a sala dos professores"
+            }
+        },
+        "sala dos professores": {
+            "titulo": "sala onde habitam os mestres",
+            "descricao": "Você chegou na sala dos professores, mas o Raul não está aqui."
+            "No lugar há uma carta de um vírus malígno dizendo que sequestrou ele."
+            "Para salvá-lo encontre os três pen drives que estão espalhados pelo Insper,"
+            "e leve-os até a sala de supercomputadores que está localizada no prédio 2.",
+            "opcoes": {
+                "biblioteca": "Ir para a biblioteca e tentar pedir ajuda",
+                "nerd box": " ir para a nerd box"
+            }
+        },
+        "nerd box": {
+            "titulo": "Sala do silêncio profundo",
+            "descricao": " Você chegou na sala e descobriu que estava vazia!"
+            "que perda de tempo!",
+            "opcoes": {"biblioteca": " ir para a biblioteca",
+                        " ": " "
+            }
+        },
+        "biblioteca": {
+            "titulo": "Sala da enrolação",
+            "descricao": "Voce está na biblioteca e terá que jogar um jogo de cartas com seu veterano",
+            "opcoes": {
+                "jogar": "jogar com o veterano"
+            }
+        },
+            "jogar": {
+            "titulo": "21",
+            "descricao": "O veterano lhe parabenizou pela boa partida",
+            "opcoes": {
+                "help desk":"eles sempre ajudam não é mesmo?",
+                "sala de aula":"quem sabe não está com algum professor "
+            }
+        },
+            
+        "help desk": {
+            "titulo": "hospital do pc",
+            "descricao": "Que sorte!, o primeiro dos pen drives estava dando sopa," 
+            "ele já está guradado no seu inventário.",
+            "opcoes": {
+                "sala de aula": "ir para a sala de aula",
+                "sala do wii": " ir para sala do wii"
+            }
+        },
+        "sala de aula": {
+            "titulo": "sala Sebastião Camargo",
+            "descricao": "Você chegou na sala de aula, e atrapalhou o pelicano!",
+            "opcoes": {
+                "help desk": "continue procurando o pen drive",
+                "biblioteca": " voltar na biblioteca"
+            }
+        },
+        "sala do wii": {
+            "titulo": "toca dos veteranos",
+            "descricao": " Você chegou na sala e descobriu que tem outro pen drive aqui,"
+            "mas, terá que batalhar com o veterano no quizz",
+            "opcoes": {"quizz": " em busca do último pen drive"
+                      
+                       
+           }
+        },
+          "quizz": {
+            "titulo": "Espero que tenha gostado do quizz!",
+            "descricao": "Agora que você já fez o quizz, um pen drive sera guardado no seu inventario",
+            "opcoes": {"quadra": " esta chegando a batalha final",
+                       
+                      
+           }
+        },
+          "quadra": {
+            "titulo": "ringue de batalha",
+            "descricao": "Está na hora da sua batalha final"
+            "para conseguir o último dos pen drives, você deverá jogar basquete com um monstro da atlética" ,
+            "opcoes": {"jogar a partida": " ganhar honestamente",
+                       "fuga": " pegar o pen drive sem que o veterano perceba"
+                      
+           }
+        },
+          "jogar a partida": {
+            "titulo": "let's go.",
+            "descricao": "Você jogou mais uma partida e ganhou o último dos pen drives" ,
+            "opcoes": {"sala dos supercomputadores": "tentar salvar o Raul"
+                      
+           }
+        },
+           "fuga": {
+            "titulo": "corree!!!",
+            "descricao": "Você conseguiu o pen drive!",
+            "opcoes": {"sala dos supercomputadores": "tentar salvar o Raul"
+                      
+           }
+        },
+          "sala dos supercomputadores": {
+            "titulo": "o encontro final",
+            "descricao": " Parabéns! Você concectou os três pen drives, salvando o Raul,"
+            " e ainda deu o doce do elevador pra ele!"
+            "Como forma de agradecimento o Raul decidiu te dar um adiantamento... Que sorte hein?",
+            "opcoes": {}
+      },
+        }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
+
 def main():
-    print('Correndo da DP')
+    print("Fugindo da DP!")
     print("--------------")
-    print("'Para o final do mês? Ahh suave, depois eu faço...' foi oque ele, "
-          "aluno de engenharia julgou como uma boa ideia quando o professor Raul "
-          "comentou sobre o EP, mas um fato raro aconteceu, o dom da procrastinação "
-          "abençoou o pobre aluno...")
     print()
-    print("É o dia da entrega, e como de costume o desespero bate forte, em seu trabalho "
-          "não havia um print. Como uma medida desesperada resolve ir voando para o Insper "
-          "tentar o impossivel: Fazer Raul adiar a entrega do trabalho!")
+    print("Parecia uma boa idéia: vou só jogar um pouquinho/assistir Netflix/"
+        "embaçar em geral. Amanhã eu começo o EP. Mas isso não deu certo...")
+    print()
+    print("É o dia de entregar o EP e você está muuuuito atrasado! Você está "
+        "na entrada do Insper, e quer procurar o professor para pedir um "
+        "adiamento do EP (boa sorte...)")
     print()
 
 

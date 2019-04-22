@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Apr 22 18:01:33 2019
+
+@author: julia
+"""
+
 import json
 import random
 def carregar_cenarios():
@@ -152,7 +159,7 @@ def main():
                        
                 if nome_cenario_atual=="quizz": 
                     print("Responta todas as perguntas seguintes com apenas sim ou nao.")
-                    print("____________________")
+                    print("________")
 
 
                     a=input("A Watson,inteligência artificial da IBM, já atuou na culinária?  ")
@@ -220,5 +227,5 @@ def main():
                 game_over = True
 
 
-if __name__ == "__main__":
+if __name__ == "_main_":
     main()
