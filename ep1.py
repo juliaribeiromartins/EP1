@@ -8,8 +8,8 @@ Created on Tue Apr 16 08:49:44 2019
 def carregar_cenarios():
     cenarios = {
         "inicio": {
-            "titulo": "fumódromo",
-            "descricao": "__ acabou de descer do Uber, oque fazer agora?",
+            "titulo": "fumodromo",
+            "descricao": "acabou de descer do Uber, oque fazer agora?",
             "opcoes": {
                 "Prédio 2": "Tentar achar o professor no prédio novo",
                 "Entrar sagão P1": "Adentrar o sagão de entrada"
@@ -122,6 +122,9 @@ def carregar_cenarios():
       },
         }
     nome_cenario_atual = "inicio"
+    return cenarios, nome_cenario_atual
+
+
 
 
 
